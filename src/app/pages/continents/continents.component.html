@@ -1,0 +1,34 @@
+<nb-card status="info" size="small">
+    <nb-card-header>Countries</nb-card-header>
+    <nb-card-body>
+
+      <table [nbTreeGrid]="source">
+        <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="allColumns"></tr>
+        <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: allColumns"></tr>
+
+        <ng-container [nbTreeGridColumnDef]="customColumn">
+          <!-- Configuracion del encabezado -->
+          <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>{{customColumn}}</th>
+          <td [ngClass]="{ 'cursor' : row.data.countries?.length > 0 }" nbTreeGridCell *nbTreeGridCellDef="let row">
+
+            <nb-tree-grid-row-toggle
+              [expanded]="row.expanded"
+              *ngIf="row.data.countries?.length > 0">
+            </nb-tree-grid-row-toggle>
+
+            {{ row.data[customColumn] }}
+            <span *ngIf="row.data.countries">
+              ({{ row.data.countries?.length }})
+            </span>
+
+          </td>
+        </ng-container>
+
+        <ng-container *ngFor="let column of defaultColumns" [nbTreeGridColumnDef]="column">
+          <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>{{column}}</th>
+          <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row.data[column] || '-'}}</td>
+        </ng-container>
+      </table>
+
+    </nb-card-body>
+  </nb-card>

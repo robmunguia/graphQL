@@ -1,0 +1,30 @@
+<div *ngIf="loading">
+    Loading...
+  </div>
+  <nb-card status="info" size="small" *ngIf="rates">
+  <nb-card-header>
+    Rates ({{ currency === undefined ? 'USD' : currency }})
+    <input name="moneda" [(ngModel)]="currency" nbInput size="tiny" placeholder="USD" />
+    <button name="btnReload" (click)="loadQuery()" nbButton fieldSize="tiny">Load</button>
+  </nb-card-header>
+
+    <nb-list>
+      <nb-list-item *ngFor="let rate of rates">
+        <div class="contenedor">
+          <div class="currencies">
+            {{ rate.currency }}
+          </div>
+          <div class="displays">
+            
+            <div class="titulo">
+              {{ rate.rate | currency }}  
+            </div>
+            <div class="sub-titulo">
+              {{ rate.name }}
+            </div>
+          </div>
+        </div>
+      </nb-list-item>
+    </nb-list>
+
+  </nb-card>

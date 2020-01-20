@@ -1,0 +1,28 @@
+.contenedor {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.currencies {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: .6775rem;
+    line-height: 1.25rem;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid #151a30;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+.displays {
+    margin-left: .5rem;
+}
+.titulo {
+    font-size: .9375rem;
+    line-height: 1.25rem;
+}
+.sub-titulo {
+    font-size: .75rem;
+    line-height: 1rem;
+}
