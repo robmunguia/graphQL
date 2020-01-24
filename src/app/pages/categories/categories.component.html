@@ -1,0 +1,23 @@
+<nb-card [nbSpinner]="loading" nbSpinnerStatus="info" status="info" size="medium">
+    <nb-card-header>
+        <Label>Categories</Label>
+    </nb-card-header>
+
+    <nb-card-body>
+
+        <table class="table">
+            <thead>
+                <th>Name</th>
+                <th>Description</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cate of categories" >
+                    <td>{{ cate.name }}</td>
+                    <td>{{ cate.description }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </nb-card-body>
+
+</nb-card>

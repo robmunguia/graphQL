@@ -1,8 +1,12 @@
 <nb-layout>    
 
   <nb-layout-header fixed>
-    <!-- Insert header here -->
     <button nbButton status="info" size="tiny" (click)="toggle()">LOGO</button>
+    <div class="menu">
+      <button name="btn-1" class="space" nbButton status="info" size="medium" (click)="toggle()">OPTION 1</button>
+      <button name="btn-2" class="space" nbButton status="info" size="medium" (click)="toggle()">OPTION 2</button>
+      <button name="btn-3" class="space" nbButton status="info" size="medium" (click)="toggle()">OPTION 3</button>
+    </div>
   </nb-layout-header>
   <nb-sidebar>
     <span>Menu</span>
@@ -14,8 +18,6 @@
     <router-outlet></router-outlet>
   </nb-layout-column>
 
-  <nb-layout-footer fixed>
-    <!-- Insert footer here -->
-  </nb-layout-footer>
+  <!-- <nb-layout-footer fixed> </nb-layout-footer> -->
 
 </nb-layout>

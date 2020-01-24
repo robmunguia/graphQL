@@ -30,6 +30,7 @@ export class ContinentsComponent implements OnInit {
   allColumns = [ this.customColumn, ...this.defaultColumns ];
   source: NbTreeGridDataSource<Continents>;
   getters: NbGetters<Continents, Continents>;
+  loading: boolean;
 
   constructor(private apollo: Apollo,
     private dataSourceBuilder: NbTreeGridDataSourceBuilder<Continents>) {
@@ -45,6 +46,7 @@ export class ContinentsComponent implements OnInit {
   }
 
   loadCountries() {
+    this.loading = true;
     // Se utiliza un segundo (servidor) para la conexion de los continentes
     this.apollo.use('endpoint2')
     .watchQuery<any>({
@@ -54,6 +56,7 @@ export class ContinentsComponent implements OnInit {
     .subscribe((resp: any) => {
       this.continents = resp.data.continents;
       this.source = this.dataSourceBuilder.create(this.continents, this.getters);
+      setTimeout(() => this.loading = false, 1500);
     });
   }
 

@@ -13,15 +13,15 @@ export class AppComponent implements OnInit {
   title = 'test-app';
 
   items = [
+    { title: 'Rates', icon: 'credit-card', link: '/rates' },
+    { title: 'Continents', icon: 'globe-2', link: '/continents' },
     {
-      title: 'Rates',
-      icon: 'credit-card',
-      link: '/rates'
-    },
-    {
-      title: 'Continents',
-      icon: 'globe-2',
-      link: '/continents'
+      title: 'Orders',
+      icon: 'cube',
+      children: [
+        { title: 'Categories', icon: 'list', link: '/categories' },
+        { title: 'Products', icon: 'archive', link: '/products' }
+      ]
     }
   ];
 
@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
   toggle() {
     this.sidebarService.toggle(true, 'mainMenu');
   }

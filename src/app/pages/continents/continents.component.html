@@ -1,8 +1,8 @@
-<nb-card status="info" size="small">
+<nb-card [nbSpinner]="loading"  nbSpinnerStatus="info" status="info" size="medium">
     <nb-card-header>Countries</nb-card-header>
     <nb-card-body>
 
-      <table [nbTreeGrid]="source">
+      <table *ngIf="!loading" [nbTreeGrid]="source">
         <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="allColumns"></tr>
         <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: allColumns"></tr>
 

@@ -33,6 +33,7 @@ export class GraphQLModule {
 
   private readonly URI1: string = 'https://o5x5jzoo7z.sse.codesandbox.io/graphql';
   private readonly URI2: string = 'https://countries.trevorblades.com/';
+  private readonly URI3: string = 'https://graphql-compose.herokuapp.com/northwind';
 
   constructor(apollo: Apollo,
               httpLink: HttpLink) {
@@ -44,6 +45,11 @@ export class GraphQLModule {
                 const options2: any = { uri: this.URI2 };
                 apollo.createNamed('endpoint2', {
                   link: httpLink.create(options2),
+                  cache: new InMemoryCache()
+                });
+                const options3: any = { uri: this.URI3 };
+                apollo.createNamed('endpoint3', {
+                  link: httpLink.create(options3),
                   cache: new InMemoryCache()
                 });
   }

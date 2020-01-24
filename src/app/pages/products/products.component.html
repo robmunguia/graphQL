@@ -1,0 +1,30 @@
+<nb-card [nbSpinner]="loading" nbSpinnerStatus="info" status="info" size="medium">
+    <nb-card-header>
+        <div class="container">
+            <div class="left"><span>Products</span></div>
+            <div class="right">
+                <button [disabled]="page === 1" class="space" status="basic" (click)="previous()" name="btn-previous" size="tiny" nbButton> <nb-icon icon="arrow-ios-back-outline"></nb-icon> </button>
+                <button [disabled]="page === totalPages" class="space" status="basic" (click)="next()" name="btn-next" size="tiny" nbButton> <nb-icon icon="arrow-ios-forward-outline"></nb-icon> </button>
+                <button class="space" nbTooltip="Add New" status="basic" routerLink="/product" name="btn-add" size="tiny" nbButton> <nb-icon icon="plus-outline"></nb-icon> </button>
+            </div>
+        </div>
+    </nb-card-header>
+    <nb-card-body>
+        <table class="table">
+            <thead>
+                <th>Name</th>
+                <th>Category</th>
+                <th>unit Price</th>
+                <th>Units in Stock</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let prod of products" >
+                    <td>{{ prod.name }}</td>
+                    <td>{{ prod.category.name }}</td>
+                    <td>${{ prod.unitPrice | number: '1.2-2' }}</td>
+                    <td>{{ prod.unitsInStock }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </nb-card-body>
+</nb-card>

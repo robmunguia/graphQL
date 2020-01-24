@@ -37,6 +37,7 @@ export class RatesComponent implements OnInit, OnDestroy {
   }
 
   loadQuery() {
+    this.loading = true;
     this.qSubscription = this.apollo.watchQuery<any>({
       query: getRatesQuery,
       variables: {

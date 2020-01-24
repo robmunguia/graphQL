@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 // Routes
@@ -15,14 +15,24 @@ import {
   NbButtonModule,
   NbListModule,
   NbCardModule,
-  NbTreeGridModule
+  NbTreeGridModule,
+  NbSpinnerModule,
+  NbIconModule,
+  NbTooltipModule,
+  NbSelectModule
 } from '@nebular/theme';
+import { CategoriesComponent } from './categories/categories.component';
+import { ProductsComponent } from './products/products.component';
+import { AddProductComponent } from './products/add-product.component';
 
 
 @NgModule({
   declarations: [
     ContinentsComponent,
-    RatesComponent
+    RatesComponent,
+    CategoriesComponent,
+    ProductsComponent,
+    AddProductComponent
   ],
   exports: [
     ContinentsComponent,
@@ -31,12 +41,18 @@ import {
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     PagesRoutingModule,
+    NbInputModule,
     NbInputModule,
     NbButtonModule,
     NbListModule,
     NbCardModule,
-    NbTreeGridModule
+    NbTreeGridModule,
+    NbSpinnerModule,
+    NbIconModule,
+    NbTooltipModule,
+    NbSelectModule
   ],
 })
 export class PagesModule { }

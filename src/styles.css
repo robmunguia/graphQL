@@ -2,3 +2,32 @@
 .cursor {
     cursor: pointer;
 }
+
+.table {
+    width: 100%;
+}
+.table > th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+ .space {
+    margin: 5px;;
+}
+.container {
+    width: 100%;
+}
+.left {
+    float: left;
+    width: 33.33%;
+}
+.center {
+    display: inline-block;
+    margin: 0 auto;
+    width: 33.33%;
+}
+.right {
+    text-align: right;
+    float: right;
+    width: 33.33%;
+}

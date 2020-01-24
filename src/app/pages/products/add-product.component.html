@@ -1,0 +1,24 @@
+<nb-card  [nbSpinner]="loading" nbSpinnerStatus="info" status="info" size="medium">
+    <nb-card-header>
+        <div class="container">
+            <div class="left"><span>Products</span></div>
+            <div class="right">
+                <button class="space" nbTooltip="Back" status="basic" routerLink="/products" name="btn-add" size="tiny" nbButton>
+                    <nb-icon icon="arrow-ios-back-outline"></nb-icon>
+                </button>
+            </div>
+        </div>
+    </nb-card-header>
+    <nb-card-body>
+        <form>
+            <input name="name" type="text" nbInput fullWidth fieldSize="small" placeholder="Name" [(ngModel)]="product.name" />
+            <nb-select *ngIf="categories" fullWidth fieldSize="small" name="category" placeholder="Category" [(ngModel)]="product.categoryID">
+                <nb-option *ngFor="let cate of categories" [value]="cate.categoryID">{{ cate.name }}</nb-option>
+            </nb-select>
+            <input name="quantityPerUnit" type="text" nbInput fullWidth fieldSize="small" placeholder="Quantity Per Unit" [(ngModel)]="product.quantityPerUnit" />
+            <input name="unitPrice" type="number" nbInput fullWidth fieldSize="small" placeholder="Unir Price" [(ngModel)]="product.unitPrice" />
+            <input name="unitsInStock" type="number" nbInput fullWidth fieldSize="small" placeholder="Unit in Stock" [(ngModel)]="product.unitsInStock" />
+            <button [disabled]="submit" name="btn-save" (click)="save()" nbButton>Save</button>
+        </form>
+    </nb-card-body>
+</nb-card>
