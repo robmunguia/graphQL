@@ -31,6 +31,7 @@ export class CategoriesComponent implements OnInit, OnDestroy {
   limit = 20;
   loading: boolean;
   category: string;
+  showProduct: boolean;
   private qSubscription: Subscription;
 
   constructor(private apollo: Apollo) { }
@@ -41,6 +42,10 @@ export class CategoriesComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.qSubscription.unsubscribe();
+  }
+
+  products( category: Categories ) {
+    category.expand = !category.expand;
   }
 
   loadQuery() {
@@ -67,6 +72,7 @@ interface Categories {
   name: string;
   description: string;
   productList: Products[];
+  expand: boolean;
 }
 
 interface Products {

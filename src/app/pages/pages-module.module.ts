@@ -9,6 +9,8 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { ContinentsComponent } from './continents/continents.component';
 import { RatesComponent } from './rates/rates.component';
 
+import { ProductsModule } from './products/products.module';
+
 // Nebular Components
 import {
   NbInputModule,
@@ -22,7 +24,6 @@ import {
   NbSelectModule
 } from '@nebular/theme';
 import { CategoriesComponent } from './categories/categories.component';
-import { ProductsComponent } from './products/products.component';
 import { AddProductComponent } from './products/add-product.component';
 
 
@@ -31,7 +32,6 @@ import { AddProductComponent } from './products/add-product.component';
     ContinentsComponent,
     RatesComponent,
     CategoriesComponent,
-    ProductsComponent,
     AddProductComponent
   ],
   exports: [
@@ -41,6 +41,7 @@ import { AddProductComponent } from './products/add-product.component';
   imports: [
     CommonModule,
     FormsModule,
+    ProductsModule,
     ReactiveFormsModule,
     PagesRoutingModule,
     NbInputModule,

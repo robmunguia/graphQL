@@ -9,11 +9,24 @@
             <thead>
                 <th>Name</th>
                 <th>Description</th>
+                <th></th>
             </thead>
-            <tbody>
-                <tr *ngFor="let cate of categories" >
+            <tbody *ngFor="let cate of categories">
+                <tr>
                     <td>{{ cate.name }}</td>
                     <td>{{ cate.description }}</td>
+                    <td>
+                        <button (click)="products( cate )" size="tiny" nbButton status="info" name="view">
+                            <!-- <nb-icon *ngIf="!cate.expand" icon="arrow-ios-downward-outline"></nb-icon>
+                            <nb-icon *ngIf="cate.expand" icon="arrow-ios-upward-outline"></nb-icon> -->
+                            <nb-icon [icon]="cate.expand ? 'arrow-ios-upward-outline' : 'arrow-ios-downward-outline'"></nb-icon>
+                        </button>
+                    </td>
+                </tr>
+                <tr *ngIf="cate.expand">
+                    <td colspan="4">
+                        <button name="btn-product" class="space" size="tiny" *ngFor="let prod of cate.productList" nbButton>{{ prod.name }}</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
