@@ -7,6 +7,7 @@ import { ContinentsComponent } from './continents/continents.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ProductsComponent } from './products/products.component';
 import { AddProductComponent } from './products/add-product.component';
+import { FindOrderComponent } from './order/find-order.component';
 
 const routes: Routes = [
     { path: 'rates', component: RatesComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
     { path: 'categories', component: CategoriesComponent },
     { path: 'products', component: ProductsComponent },
     { path: 'product', component: AddProductComponent },
+    { path: 'search', component: FindOrderComponent },
     { path: '', redirectTo: '/rates', pathMatch: 'full' }
 ];
 

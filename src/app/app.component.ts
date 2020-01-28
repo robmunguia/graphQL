@@ -20,7 +20,8 @@ export class AppComponent implements OnInit {
       icon: 'cube',
       children: [
         { title: 'Categories', icon: 'list', link: '/categories' },
-        { title: 'Products', icon: 'archive', link: '/products' }
+        { title: 'Products', icon: 'archive', link: '/products' },
+        { title: 'Search', icon: 'search', link: '/search' }
       ]
     }
   ];

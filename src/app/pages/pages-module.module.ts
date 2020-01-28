@@ -9,7 +9,10 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { ContinentsComponent } from './continents/continents.component';
 import { RatesComponent } from './rates/rates.component';
 
+// Modules
+import { ServicesModule } from '../services/services.module';
 import { ProductsModule } from './products/products.module';
+import { OrdersModule } from './order/order.module';
 
 // Nebular Components
 import {
@@ -42,6 +45,8 @@ import { AddProductComponent } from './products/add-product.component';
     CommonModule,
     FormsModule,
     ProductsModule,
+    OrdersModule,
+    ServicesModule,
     ReactiveFormsModule,
     PagesRoutingModule,
     NbInputModule,
